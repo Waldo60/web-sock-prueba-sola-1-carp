@@ -24,7 +24,7 @@ fun_bar () {
          tput dl1
          echo -ne "\033[1;37m    AGUARDE..\033[1;35m["
          done
-         echo -e "\033[1;35m]\033[1;37m -\033[1;32m INSTALADO !\033[1;37m"
+         echo -e "\033[1;35m]\033[1;37m -\033[1;32m INSTALADO \033[1;37m"
          tput cnorm
 		 echo -e "\033[1;31m---------------------------------------------------\033[1;37m"
         }
@@ -32,9 +32,9 @@ fun_bar () {
 
 clear&&clear
 echo -e "\033[1;31m———————————————————————————————————————————————————\033[1;37m"
-echo -e "\033[1;32m              WEBSOCKET SSH+py & ssl "
+echo -e "\033[1;32m              WEBSOCKET SSH "
 echo -e "\033[1;31m———————————————————————————————————————————————————\033[1;37m"
-echo -e "\033[1;37m      WEBSOCKET SSH USARA A PORTA 80 e 443"
+echo -e "\033[1;37m      WEBSOCKET SSH USARÁ A PORTA 80 e 443"
 echo
 echo -e "\033[1;33m                 INSTALANDO SSL... "
 inst_ssl () {
@@ -59,7 +59,7 @@ fun_bar 'inst_ssl'
 read -p "  STATUS DE CONEXÃO :" msgbanner
 [[ "$msgbanner" = "" ]]&& msgbanner="SSL + Pay"
 echo 
-echo -e "\033[1;33m                 CONFIGURANDO PYTHON.. "
+echo -e "\033[1;33m                 CONFIGURANDO PYTHON... "
 inst_py () {
 
 pkill -f 80
@@ -319,9 +319,9 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
     print "\n ==============================\n"
     print "\n         PYTHON PROXY          \n"
     print "\n ==============================\n"
-    print "corriendo ip: " + LISTENING_ADDR
-    print "corriendo port: " + str(LISTENING_PORT) + "\n"
-    print "Se ha Iniciado Por Favor Cierre el Terminal\n"
+    print "executando ip: " + LISTENING_ADDR
+    print "porta em execução: " + str(LISTENING_PORT) + "\n"
+    print "Iniciado agora feche o terminal\n"
     
     server = Server(LISTENING_ADDR, LISTENING_PORT)
     server.start()
@@ -330,7 +330,7 @@ def main(host=LISTENING_ADDR, port=LISTENING_PORT):
         try:
             time.sleep(2)
         except KeyboardInterrupt:
-            print 'Stopping...'
+            print 'Parando...'
             server.close()
             break
     
@@ -344,9 +344,7 @@ screen -dmS pythonwe python proxy.py -p 80&
 }
 fun_bar 'inst_py'
 rm -rf proxy.py
-echo -e "                 INSTALAÇÃO CONCLUIDA "
+echo -e "                 INSTALAÇÃO CONCLUÍDA "
 
 echo 
-
-
 
